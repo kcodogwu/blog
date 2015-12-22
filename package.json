@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "A simple blog application.",
+  "main": "blog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "comment",
+    "social",
+    "media",
+    "web"
+  ],
+  "author": "Kingson Chinedu Odogwu",
+  "license": "(ISC OR MIT OR GPL-3.0 OR Apache-2.0 OR BSD-3-Clause)",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/kcodogwu/blog.git"
+  }
+}

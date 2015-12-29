@@ -1,0 +1,10 @@
+<h1>Blog</h1>
+<div id="articles">
+    {{#each articles}}
+        <div class="article">
+            <div class="date-created">{{dateCreated}}</div>
+            <div class="title"><a href="/blog/{{id}}">{{title}}</a></div>
+            <div class="article">{{content}}</div>
+        </div>
+    {{/each}}
+<div>

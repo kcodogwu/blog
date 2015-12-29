@@ -1,15 +1,36 @@
 // load modules for the app
 var express = require('express');
+var handlebars = require('express-handlebars').create({ defaultLayout:'main' });
+var bodyParser = require('body-parser');
+var ArticleProvider = require('./models/article.js').ArticleProvider;
 // end: load modules for the app
 
-// setup variables
 var app = express();
-// end: load modules for the app
+var articleprovider = new ArticleProvider();
 
 app.set('port', process.env.PORT || 8888);
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.disable('x-powered-by');
 
 app.get('/', function (req, res) {
-    res.send('Hello!');
+    articleprovider.findAll(function (error, articles) {
+        var context = {
+            articles: articles.map(function (article) {
+                return {
+                    id: article._id,
+                    title: article.title,
+                    content: article.content,
+                    dateCreated: article.dateCreated
+                };
+            })
+        };
+        
+        res.render('home', context);
+    });
 });
 
 // custom 404 page

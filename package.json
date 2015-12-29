@@ -16,10 +16,15 @@
   "author": "Kingson Chinedu Odogwu",
   "license": "(ISC OR MIT OR GPL-3.0 OR Apache-2.0 OR BSD-3-Clause)",
   "dependencies": {
-    "express": "^4.13.3"
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/kcodogwu/blog.git"
+    "type": "git",
+    "url": "https://github.com/kcodogwu/blog.git"
+  },
+  "devDependencies": {
+    "qunitjs": "^1.20.0"
   }
 }
